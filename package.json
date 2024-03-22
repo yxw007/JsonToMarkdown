@@ -1,0 +1,43 @@
+{
+  "name": "jsontomarkdown",
+  "displayName": "JsonToMarkdown",
+  "description": "json translate markdown table",
+  "version": "0.0.1",
+  "author": "yxw007<aa4790139@gmail.com>",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "editor.jsonToMarkdownTable",
+        "title": "json to markdown table"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "editor.jsonToMarkdownTable",
+        "key": "ctrl+shift+alt+t"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
