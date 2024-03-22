@@ -67,7 +67,7 @@ function jsonToMarkdownTable(json) {
 	res += "|字段|类型|必填|名称|描述|\n";
 	res += "|:----|:---|:----- |:----- |:-----   |\n";
 	for (const item of arr) {
-		res += `|${item.key} |  |${item.type} |   | | \n`;
+		res += `|${item.key} | ${item.type} | |   | | \n`;
 	}
 
 	return res;
