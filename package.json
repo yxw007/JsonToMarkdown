@@ -2,7 +2,7 @@
   "name": "jsontomarkdown",
   "displayName": "JsonToMarkdown",
   "description": "json translate markdown table",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "yxw007<aa4790139@gmail.com>",
   "repository": "https://github.com/yxw007/JsonToMarkdown.git",
   "engines": {
