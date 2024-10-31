@@ -30,19 +30,38 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "pretest": "yarn run lint",
-    "test": "vscode-test"
+    "pretest": "npm run lint",
+    "build": "npx vsce package",
+    "release": "npx changelogen --release -i",
+    "test": "vscode-test",
+    "prepare": "husky"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts}": [
+      "npm lint"
+    ]
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^19.5.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
     "@types/vscode": "^1.87.0",
     "@vscode/test-cli": "^0.0.6",
     "@vscode/test-electron": "^2.3.9",
+    "changelogen": "^0.5.7",
+    "commitlint": "^19.5.0",
     "eslint": "^8.56.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "json5": "^2.2.3",
     "vsce": "^2.15.0"
   }
 }

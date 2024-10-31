@@ -1,6 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
+const JSON5 = require('json5');
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -11,7 +12,7 @@ function getType(p) {
 	return type;
 }
 
-function isObjectOrArray(type) {
+function isObjectOrArray(type) { 
 	return type == "object" || type == "array";
 }
 
@@ -92,9 +93,8 @@ function activate(context) {
 		let json = "";
 		try {
 			let text = activeText.replace(/[\r\n\t\s]/g, "");
-			text = text.replace(/(,)((\\r)|(\\n)|(\\t)|(\\b))*(})/g, "$7");
-			text = text.replace(/([\w0-9]+)(\s*:)/g, `"$1"$2`);
-			json = JSON.parse(text);
+			console.log(text);
+			json = JSON5.parse(text);
 		} catch (error) {
 			vscode.window.showErrorMessage("选中文本非JSON文本, 请重新选择");
 			return;
